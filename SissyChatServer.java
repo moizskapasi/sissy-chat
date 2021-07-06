@@ -4,20 +4,26 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.Scanner;
 import java.util.Vector;
 
-public class TinyChatServer {
+public class SissyChatServer {
+    private static int portnum;
 
     private Vector<Socket> sockets = new Vector<>();
     public static void main(String [] args) {
-        new TinyChatServer();
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter the port of the server: ");
+        portnum = scan.nextInt();
+        scan.close();
+        new SissyChatServer();
     }
 
-    public TinyChatServer() {
+    public SissyChatServer() {
         ServerSocket ss = null;
         Socket s = null;
         try {
-            ss = new ServerSocket(12410);
+            ss = new ServerSocket(portnum);
             while(true) {
                 s = ss.accept();
                 System.out.println("Connected");

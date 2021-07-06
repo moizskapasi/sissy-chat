@@ -5,7 +5,7 @@ import java.io.*;
 import java.util.*;
 import java.net.*;
 
-public class TinyChatClientGUI implements ActionListener{
+public class SissyChatClientGUI implements ActionListener{
     private JFrame frame;
     private JPanel msgarea;
     private JPanel msgbut;
@@ -21,7 +21,7 @@ public class TinyChatClientGUI implements ActionListener{
     private static int portnum;
     private static String ip;
 
-    public TinyChatClientGUI(String name) {
+    public SissyChatClientGUI(String name) {
         this.name = "<"+name+">: ";
         frame = new JFrame(name + "'s Chat");
         frame.setSize(750, 685);
@@ -103,9 +103,9 @@ public class TinyChatClientGUI implements ActionListener{
         System.out.println("Enter the port of the server: ");
         portnum = scan.nextInt();
         System.out.println("Enter the IP of the server: ");
-        ip = scan.nextLine();
+        ip = scan.next();
         scan.close();
-        new TinyChatClientGUI(name);
+        new SissyChatClientGUI(name);
 
     }
 }
